@@ -9,7 +9,7 @@ else:
 
 class ModelClass:
     
-    def __init__(self,model_id,model_basename,temperature):
+    def __init__(self,model_id,model_basename):
         model_path = hf_hub_download(repo_id=model_id, filename=model_basename)
   
         kwargs = {
@@ -22,7 +22,6 @@ class ModelClass:
         if device_type.lower() == "cuda:0":
             kwargs["n_gpu_layers"] = 15
             kwargs["n_batch"] = 40
-            kwargs["temperature"] =temperature
         print("GGML Model Loaded Succesfully.")
         self.model=LlamaCpp(**kwargs)
             
