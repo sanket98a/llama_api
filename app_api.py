@@ -4,12 +4,12 @@ import streamlit as st
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
-with st.sidebar:
-    model_name=st.selectbox("Select Model :-",['Llama-2-7B-Chat','CodeLlama-7B-Instruct'])
-    temperature=st.slider("Temperature :-",0.0,1.0,0.1)
-    top_p=st.slider("top_p :-",0.0,1.0,0.95)
-    top_k=st.slider("top_k :- ",0,100,50)
-    # DEFAULT_SYSTEM_PROMPT=st.text_area("System Prompt :-",f"{DEFAULT_SYSTEM_PROMPT}",height=400)
+
+model_name='Llama-2-7B-Chat'
+temperature=0.01
+top_p=0.95
+top_k=50
+# DEFAULT_SYSTEM_PROMPT=st.text_area("System Prompt :-",f"{DEFAULT_SYSTEM_PROMPT}",height=400)
 
 # Load the selected model
 if model_name=="Llama-2-7B-Chat":
