@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-model_name='Llama-2-7B-Chat'
+model_name='codellama-7b-instruct'
 temperature=0.01
 top_p=0.95
 top_k=50
