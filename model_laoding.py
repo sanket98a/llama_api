@@ -26,7 +26,7 @@ class ModelClass:
         self.model=LlamaCpp(**kwargs)
             
 
-    def generate(self, prompt: str, params: dict[str, str])-> str:
+    def generate(self, prompt: str, params: dict[str, str]):
         if params is None:
             params = {}
         suffix = params.get("suffix")
